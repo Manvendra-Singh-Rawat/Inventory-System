@@ -92,13 +92,18 @@ struct FItemAssetData
 };
 
 
-//************************************************************************************************
+//------------------------------------------------------------------------------------------------
 //								DATA TABLE VISIBLE OPTIONS START
-//************************************************************************************************
+//------------------------------------------------------------------------------------------------
 USTRUCT()
 struct FItemData : public FTableRowBase
 {
 	GENERATED_USTRUCT_BODY()
+
+	UPROPERTY(EditAnywhere, Category = "Data Item")
+	FName ID;
+
+	int Quantity;
 
 	UPROPERTY(EditAnywhere, Category = "Data Item")
 	EItemQuality Quality;
@@ -112,10 +117,12 @@ struct FItemData : public FTableRowBase
 	UPROPERTY(EditAnywhere, Category = "Data Item")
 	FItemNumericData ItemNumData;
 	UPROPERTY(EditAnywhere, Category = "Data Item")
+	FWeaponData ArmorStats;
+	UPROPERTY(EditAnywhere, Category = "Data Item")
 	FWeaponData WeaponStats;
 	UPROPERTY(EditAnywhere, Category = "Data Item")
 	FConsumableData ConsumableStats;
 };
-//************************************************************************************************
+//------------------------------------------------------------------------------------------------
 //								DATA TABLE VISIBLE OPTIONS END
-//************************************************************************************************
+//------------------------------------------------------------------------------------------------
